@@ -1,0 +1,119 @@
+/* Copyright 2013 by Simo Haakana http://www.github.com/siimeon */
+/* All Rights Reserved */
+
+/* Default css file for Harjunalustan Sinivelet Ry web site */
+body{
+	margin:0px;
+	font-family: verdana;
+}
+header{
+	position: fixed;
+	width: 100%;
+}
+/* Navigation bar styling */
+nav{
+	background-color: rgb(36, 78, 186);
+	color:white;
+	font-size:22px;
+	border-bottom: 3px solid white;
+	-webkit-user-select: none;  
+  	-moz-user-select: none;    
+  	-ms-user-select: none; 
+  	text-align: center;
+  	/*position: fixed;*/
+  	width: 100%;
+  	padding-bottom: 0%;
+  	padding-top: 0.4%;
+}
+ul{
+	list-style: none;
+}
+li{
+	display: inline;
+	margin-right:2%;
+	white-space: nowrap;
+	font-family: 'Montserrat Alternates', sans-serif; 
+	margin-right:2%;
+	line-height: 2;
+	margin-top: 10px;
+	white-space: nowrap;
+	-webkit-user-select: none;  
+  	-moz-user-select: none;    
+  	-ms-user-select: none; 
+}
+li:hover{
+	opacity: 0.6;
+}
+li a{
+	text-decoration: none;
+	color: white;	
+}
+/* Navigation bar 'dropdown' menu default hiden */
+ul.hide{
+	display: none;
+}
+/* Default photo cover div styling */
+div.cover{
+	height: 1000px;
+	background-color: white;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+/* Default section styling */
+section{
+	padding: 50px 50px 50px 50px;
+	color: white;
+	font-size:30px;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+}
+/* Article styling */
+h1{
+	text-align: center;
+	-moz-column-count:1; /* Firefox */
+	-webkit-column-count:1; /* Safari and Chrome */
+	column-count:1;
+}
+article.content{
+	-moz-column-count:2; /* Firefox */
+	-webkit-column-count:2; /* Safari and Chrome */
+	column-count:2;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
+/* STYLES GO HERE */
+	article.content{
+		-moz-column-count:1; /* Firefox */
+		-webkit-column-count:1; /* Safari and Chrome */
+		column-count:1;
+		font-size: 40px;
+	}
+}
+/* Footer styling */
+footer{
+	height: 100px;
+	background-color: rgb(194, 194, 192);
+	border-top: 8px solid black;
+	border-bottom: 8px solid black;
+}
+footer div p{
+	margin: 0px;
+	padding: 0px;
+	font-size: 20px;
+}
+footer div a{
+	text-decoration: none;
+	color: black;
+}
+/* Footer logo div */
+div.footer_logo{
+	float: left;
+	padding: 30px 0px 0px 20px;
+}
+/* Footer text div */
+div.rights{
+	float: left;
+	padding: 20px 100px 0px 100px;
+	font-family: 'Montserrat Alternates', sans-serif; 
+}

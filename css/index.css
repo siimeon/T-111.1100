@@ -1,0 +1,69 @@
+/* Copyright 2013 by Simo Haakana http://www.github.com/siimeon */
+/* All Rights Reserved */
+/* This css file is made for index.html */
+
+/* Section background colors */
+section#lippukunta{
+	background-color: rgb(94, 15, 117);
+}
+section#toiminta{
+	background-color: rgb(212, 121, 30);
+}
+section#johtaja{
+	background-color: rgb(169, 206, 108);
+}
+section#yhteys{
+	background-color: rgb(148, 120, 21);
+}
+/* Background cover image */
+div.main_cover{
+	background-image:url('../img/cover.jpg');
+}
+div.sail_cover{
+	background-image: url('../img/purjehdus.jpg');
+}
+div.lapland_cover{
+	background-image: url('../img/lapland1.jpg');
+}
+div.salmela_cover{
+	background-image: url('../img/salmela_lippu.jpg');
+}
+div.sail_cover2{
+	background-image: url('../img/purjehdus2.jpg');
+}
+/* RWD (Responsive Web Development) sample */
+/*
+@media all and (max-device-width:1000px){
+        li{
+        	font-size: 45px;
+        	padding-right: 5%;
+        }
+}
+*/
+#mobile_menu{
+	display:none;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
+/* Smartphones */
+	li>a{
+		font-size: 40px;
+	}
+	li{
+		font-size: 40px;
+	}
+	li>a[name="mobile_hide"]{
+		display: none;
+	}
+	
+	li[name="mobile_hide"]{
+		display: none;
+	}
+	#mobile_menu{
+		display: inline;
+		margin-left: 20%;
+	}
+	svg{
+		height: 50px;
+		width: 50px;
+	}
+}

@@ -1,0 +1,50 @@
+/* Copyright 2013 by Simo Haakana http://www.github.com/siimeon */
+/* All Rights Reserved */
+/* This css file is made for harjoitukset.html */
+
+div.main_cover{
+	background-image:url('../img/trees.jpg');
+}
+div.winter_salmela_cover{
+	background-image:url('../img/salmela_talvi.jpg');
+}
+div.tent_cover{
+	background-image:url('../img/teltta.jpg');
+}
+div.sotka_cover{
+	background-image:url('../img/sotka.jpg');
+}
+div.lapland_cover{
+	background-image:url('../img/lapland2.jpg');
+}
+div.fall_salmela_cover{
+	background-image:url('../img/salmela_syksy.jpg');
+}
+div.tent2_cover{
+	background-image:url('../img/teltta2.jpg');
+}
+div.long_sail_cover{
+	background-image:url('../img/purjehdus3.jpg');
+	height:1500px;
+}
+#long{
+	height:1500px;
+}
+section#h1{
+	background-color: rgb(169, 206, 108);
+}
+section#h2{
+	background-color: rgb(148, 120, 21);
+}
+section#h3{
+	background-color: rgb(94, 15, 117);
+}
+section#h4{
+	background-color: rgb(212, 121, 30);
+}
+section#h5{
+	background-color: rgb(163, 0, 58);
+}
+section#project{
+	background-color: rgb(51, 101, 46);
+}
