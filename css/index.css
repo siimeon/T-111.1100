@@ -40,30 +40,3 @@ div.sail_cover2{
         }
 }
 */
-#mobile_menu{
-	display:none;
-}
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
-/* Smartphones */
-	li>a{
-		font-size: 40px;
-	}
-	li{
-		font-size: 40px;
-	}
-	li>a[name="mobile_hide"]{
-		display: none;
-	}
-	
-	li[name="mobile_hide"]{
-		display: none;
-	}
-	#mobile_menu{
-		display: inline;
-		margin-left: 20%;
-	}
-	svg{
-		height: 50px;
-		width: 50px;
-	}
-}

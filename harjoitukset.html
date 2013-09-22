@@ -22,6 +22,7 @@
 		<script type="text/javascript" src="js/scroll.js"></script>
 		<!-- Loading my own/custom javascript/jQuery for show and hide for harjoitus element -->
 		<script type="text/javascript" src="js/show.js"></script>
+		<script type="text/javascript" src="js/show2.js"></script>
 	</head>
 	<body>
 		<!-- Navigation bar made with nav, ul, li elements -->
@@ -29,13 +30,22 @@
 			<nav>
 				<ul>
 					<li><a href="#top">Harjunalustan Siniveljet Ry</a></li>
-					<li id="open_btn">Etusivu</li>
-					<li><a href="#h1">Harjoitus 1.</a></li>
-					<li><a href="#h2">Harjoitus 2.</a></li>
-					<li><a href="#h3">Harjoitus 3.</a></li>
-					<li><a href="#h4">Harjoitus 4.</a></li>
-					<li><a href="#h5">Harjoitus 5.</a></li>
-					<li><a href="projektityo.html">Projektityö</a></li>
+					<li id="mobile_menu">
+						<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  							<g fill="none" stroke="white">
+					    		<path stroke-width="6" d="M5 20 l60 0" />
+					    		<path stroke-width="6" d="M5 30 l60 0" />
+					    		<path stroke-width="6" d="M5 40 l60 0" />
+  							</g>
+						</svg>
+					</li>
+					<li name="mobile_hide" id="open_btn">Etusivu</li>
+					<li><a name="mobile_hide" href="#h1">Harjoitus 1.</a></li>
+					<li><a name="mobile_hide" href="#h2">Harjoitus 2.</a></li>
+					<li><a name="mobile_hide" href="#h3">Harjoitus 3.</a></li>
+					<li><a name="mobile_hide" href="#h4">Harjoitus 4.</a></li>
+					<li><a name="mobile_hide" href="#h5">Harjoitus 5.</a></li>
+					<li><a name="mobile_hide" href="projektityo.html">Projektityö</a></li>
 				</ul>
 				<ul id="show_menu" class="hide">
 					<li><a href="index.html">Etusivu</a></li>
@@ -89,7 +99,7 @@
 				<a href="http://www.partio.fi"><img src="img/partio_logo.png" alt="Suomen Pariolaisten Logo"></a>
 			</div>
 			<div class="rights">
-				<p>&copy; Coppyright 2013 by <a href="https://github.com/siimeon">Simo Haakana</a></p>
+				<p>&copy; Copyright 2013 by <a href="https://github.com/siimeon">Simo Haakana</a></p>
 				<p><a href="http://www.aalto.fi">Made to Aalto University courser T-111.1100</a></p>
 				<p>All Rights Reserved</p>
 			</div>
