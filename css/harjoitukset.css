@@ -30,6 +30,14 @@ div.long_sail_cover{
 #long{
 	height:1500px;
 }
+@media only screen and (min-device-width : 1000px) and (min-width : 2000px) { 
+/* Big screens */
+	#long{
+		height:2200px;
+	}
+}
+/* Legacy code - replaced with partio.css */
+/*
 section#h1{
 	background-color: rgb(169, 206, 108);
 }
@@ -48,3 +56,4 @@ section#h5{
 section#project{
 	background-color: rgb(51, 101, 46);
 }
+*/

@@ -5,6 +5,7 @@
 	<head>
 		<!-- Define utf-8 -->
 		<meta charset="utf-8"> 
+		<meta name="author" content="Simo Haakana">
 		<title>Projektityö - T-111.1100</title>
 		<!-- Load projektityo.html page specific stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/harjoitukset.css">
@@ -23,30 +24,32 @@
 		<!-- Loading my own/custom javascript/jQuery for show and hide for harjoitus element -->
 		<script type="text/javascript" src="js/show.js"></script>
 		<script type="text/javascript" src="js/show2.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/partio.css">
 	</head>
 	<body>
 		<!-- Navigation bar made with nav, ul, li elements -->
 		<header>
 			<nav>
 				<ul>
-					<li><a href="index.html">Harjunalustan Siniveljet Ry</a></li>
-					<li id="mobile_menu">
-						<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  							<g fill="none" stroke="white">
-					    		<path stroke-width="6" d="M5 20 l60 0" />
-					    		<path stroke-width="6" d="M5 30 l60 0" />
-					    		<path stroke-width="6" d="M5 40 l60 0" />
-  							</g>
-						</svg>
-					</li>
-					<li name="mobile_hide" id="open_btn">Etusivu</li>
-					<li><a name="mobile_hide" href="harjoitukset.html#h1">Harjoitus 1.</a></li>
-					<li><a name="mobile_hide" href="harjoitukset.html#h2">Harjoitus 2.</a></li>
-					<li><a name="mobile_hide" href="harjoitukset.html#h3">Harjoitus 3.</a></li>
-					<li><a name="mobile_hide" href="harjoitukset.html#h4">Harjoitus 4.</a></li>
-					<li><a name="mobile_hide" href="harjoitukset.html#h5">Harjoitus 5.</a></li>
-					<li><a name="mobile_hide" href="#project">Projektityö</a></li>
+					<li><a href="#long" data-name="title">Harjunalustan Siniveljet Ry</a></li>
+					<li data-rwd="mobile_hide" id="open_btn">Etusivu</li>
+					<li><a data-rwd="mobile_hide" href="harjoitukset.html#h1">
+					Harjoitus 1.</a></li>
+					<li><a data-rwd="mobile_hide" href="harjoitukset.html#h2"><span data-rwd="huge-screen">Harjoitus</span> 2.</a></li>
+					<li><a data-rwd="mobile_hide" href="harjoitukset.html#h3"><span data-rwd="huge-screen">Harjoitus</span> 3.</a></li>
+					<li><a data-rwd="mobile_hide" href="harjoitukset.html#h4"><span data-rwd="huge-screen">Harjoitus</span> 4.</a></li>
+					<li><a data-rwd="mobile_hide" href="harjoitukset.html#h5"><span data-rwd="huge-screen">Harjoitus</span> 5.</a></li>
+					<li><a data-rwd="mobile_hide" href="#project">Projektityö</a></li>
 				</ul>
+				<!-- svg elemnt is used to draw menu icon for smartphones -->
+				<!-- #mobile_menu is hiden for all other devices except smarphones -->
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="mobile_menu">
+  					<g fill="none" stroke="white">
+						<path stroke-width="6" d="M5 20 l60 0" />
+						<path stroke-width="6" d="M5 30 l60 0" />
+						<path stroke-width="6" d="M5 40 l60 0" />
+  					</g>
+				</svg>
 				<ul id="show_menu" class="hide">
 					<li><a href="index.html">Etusivu</a></li>
 					<li><a href="index.html#lippukunta">Lippukunta</a></li>
@@ -57,22 +60,25 @@
 			</nav>
 		</header>
 		<div class="cover long_sail_cover" id="long"></div>
-		<section id="project">
+		<section data-bg-color="Metsanvihrea" id="project">
 			<h1>T.111-1100 Projektityö</h1>
 			<article class="content">
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
 			</article>
+			<h4 class="button" id="btn_p">Harjoitukseen käytettyjä resursseja</h4>
+			<aside class="resourse" id="aside_p">HSV website resourses</aside>
 		</section>
 		<div class="tent2_cover cover"></div>
 		<!-- Footer element begins -->
 		<!-- In footer element is Suomen Partiolaisten logo and notice about copyright and that this is T-111-1100 Aalto University course project. Logo/Image is in one div and information is in second div element -->
-		<footer>
+		<div id="footer_holder"></div>
+		<footer itemscope itemtype="http://schema.org/Person">
 			<div class="footer_logo">
 				<a href="http://www.partio.fi"><img src="img/partio_logo.png" alt="Suomen Pariolaisten Logo"></a>
 			</div>
 			<div class="rights">
-				<p>&copy; Copyright 2013 by <a href="https://github.com/siimeon">Simo Haakana</a></p>
-				<p><a href="http://www.aalto.fi">Made to Aalto University courser T-111.1100</a></p>
+				<p >&copy; Copyright 2013 by <a href="http://www.github.com/siimeon" itemprop="name">Simo Haakana</a></p>
+				<p ><a href="http://www.aalto.fi">Made to <span itemprop="affiliation">Aalto University</span> courser T-111.1100</a></p>
 				<p>All Rights Reserved</p>
 			</div>
 		</footer>

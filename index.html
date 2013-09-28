@@ -4,7 +4,10 @@
 <html>
 	<head>
 		<!--Define utf-8 -->
-		<meta charset="utf-8"> 
+		<meta charset="utf-8">
+		<meta name="author" content="Simo Haakana">
+		<meta name="keywords" content="HSV, Harjunalustan Siniveljet, Lahti, Partio">
+		<meta name="description" content="Harjunalustan Siniveljet Ry partio lippukunnan verkkosivut">
 		<title>HSV - Harjunalustan Siniveljet Ry</title>
 		<!-- Load index.html page specific stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/index.css">
@@ -22,7 +25,7 @@
 		<script type="text/javascript" src="js/scroll.js"></script>
 		<!-- Loading my own/custom javascript/jQuery for show and hide for harjoitus element -->
 		<script type="text/javascript" src="js/show.js"></script>
-		<script type="text/javascript" src="js/show2.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/partio.css">
 	</head>
 	<body>
 		<!-- Navigation bar made with nav, ul, li elements -->
@@ -30,41 +33,42 @@
 			<nav>
 				<!-- Main navigation menu -->
 				<ul>
-					<li><a href="#top">Harjunalustan Siniveljet Ry</a></li>
-					<li id="mobile_menu">
-						<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  							<g fill="none" stroke="white">
-					    		<path stroke-width="6" d="M5 20 l60 0" />
-					    		<path stroke-width="6" d="M5 30 l60 0" />
-					    		<path stroke-width="6" d="M5 40 l60 0" />
-  							</g>
-						</svg>
-					</li>
-					<li><a name="mobile_hide" href="#lippukunta">Lippukunta</a></li>
-					<li><a name="mobile_hide" href="#toiminta">Toiminta</a></li>
-					<li><a name="mobile_hide" href="#johtaja">Johtajisto</a></li>
-					<li><a name="mobile_hide" href="#yhteys">Ota Yhteyttä</a></li>
-					<li name="mobile_hide" id="open_btn">Harjoitukset</li>
+					<li><a data-name="title" href="#top">Harjunalustan Siniveljet Ry</a></li>
+					<li><a data-rwd="mobile_hide" href="#lippukunta">Lippukunta</a></li>
+					<li><a data-rwd="mobile_hide" href="#toiminta">Toiminta</a></li>
+					<li><a data-rwd="mobile_hide" href="#johtaja">Johtajisto</a></li>
+					<li><a data-rwd="mobile_hide" href="#yhteys">Ota Yhteyttä</a></li>
+					<li data-rwd="mobile_hide" id="open_btn">Harjoitukset</li>
 				</ul>
+				<!-- svg elemnt is used to draw menu icon for smartphones -->
+				<!-- #mobile_menu is hiden for all other devices except smarphones -->
+				<div id="mobile_menu">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  					<g fill="none" stroke="white">
+							<path stroke-width="6" d="M5 20 l60 0" />
+							<path stroke-width="6" d="M5 30 l60 0" />
+							<path stroke-width="6" d="M5 40 l60 0" />
+	  					</g>
+					</svg>
+				</div>
 				<!-- 'Dropdown' navigation menu -->
 				<!-- ul.hide default hiden, defined in index.css-->
 				<ul id="show_menu" class="hide">
 					<li><a href="harjoitukset.html">Harjoitukset</a></li> 
-					<li><a href="harjoitukset.html#h1">1.</a></li>
-					<li><a href="harjoitukset.html#h2">2.</a></li>
-					<li><a href="harjoitukset.html#h3">3.</a></li>
-					<li><a href="harjoitukset.html#h4">4.</a></li>
-					<li><a href="harjoitukset.html#h5">5.</a></li>
+					<li><a href="harjoitukset.html#h1"><span data-rwd="huge-screen">Harjoitus</span>1.</a></li>
+					<li><a href="harjoitukset.html#h2"><span data-rwd="huge-screen">Harjoitus</span>2.</a></li>
+					<li><a href="harjoitukset.html#h3"><span data-rwd="huge-screen">Harjoitus</span>3.</a></li>
+					<li><a href="harjoitukset.html#h4"><span data-rwd="huge-screen">Harjoitus</span>4.</a></li>
+					<li><a href="harjoitukset.html#h5"><span data-rwd="huge-screen">Harjoitus</span>5.</a></li>
 					<li><a href="projektityo.html">Projektityö</a></li>
-				</ul>
-				
+				</ul>		
 			</nav>
 		
 		</header>
 		<!-- First cover photo. Photo source defined in index.css-->
 		<div class="main_cover cover" id="top"></div>
 		<!-- First text chpater -->
-		<section  id="lippukunta">
+		<section  id="lippukunta" data-bg-color="Kanervanvioletti">
 			<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
 			<h1>Lippukunta</h1>
 			<article class="content">
@@ -74,7 +78,7 @@
 		<!-- Second cover photo. Photo source defined in index.css-->
 		<div class="sail_cover cover"></div>
 		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
-		<section id="toiminta">
+		<section id="toiminta" data-bg-color="Hiilloksenoranssi">
 			<h1>Toiminta</h1>
 			<article class="content" >
 			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus 
@@ -83,7 +87,7 @@
 		<!-- Third cover photo. Photo source defined in index.css -->
 		<div class="lapland_cover cover"></div>
 		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
-		<section id="johtaja">
+		<section id="johtaja" data-bg-color="Omenanvihrea">
 			<h1>Johtajat</h1>
 			<article class="content" >
 			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui.
@@ -92,23 +96,24 @@
 		<!-- Fourth cover photo. Photo source defined in index.css -->
 		<div class="sail_cover2 cover"></div>
 		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
-		<section  id="yhteys">
+		<section  id="yhteys" data-bg-color="Hiekanruskea">
 			<h1>Ota Yhteyttä</h1>
 			<article class="content" >
 			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui.
 			</article>
 		</section>
 		<!-- Last cover photo. Photo source defined in index.css -->
-		<div class="salmela_cover cover" ></div>
+		<div class="salmela_cover cover" data-cover="last"></div>
 		<!-- Footer element begins -->
 		<!-- In footer element is Suomen Partiolaisten logo and notice about copyright and that this is T-111-1100 Aalto University course project. Logo/Image is in one div and information is in second div element -->
-		<footer>
+		<div id="footer_holder"></div>
+		<footer itemscope itemtype="http://schema.org/Person">
 			<div class="footer_logo">
 				<a href="http://www.partio.fi"><img src="img/partio_logo.png" alt="Suomen Pariolaisten Logo"></a>
 			</div>
 			<div class="rights">
-				<p>&copy; Copyright 2013 by <a href="https://github.com/siimeon">Simo Haakana</a></p>
-				<p><a href="http://www.aalto.fi">Made to Aalto University courser T-111.1100</a></p>
+				<p >&copy; Copyright 2013 by <a href="http://www.github.com/siimeon" itemprop="url"><span itemprop="name">Simo Haakana</span></a><a href="simo.haakana@aalto.fi" itemprop="email"></a></p>
+				<p ><a href="http://www.aalto.fi">Made to <span itemprop="affiliation">Aalto University</span> courser T-111.1100</a></p>
 				<p>All Rights Reserved</p>
 			</div>
 		</footer>

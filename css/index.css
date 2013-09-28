@@ -3,6 +3,7 @@
 /* This css file is made for index.html */
 
 /* Section background colors */
+/*
 section#lippukunta{
 	background-color: rgb(94, 15, 117);
 }
@@ -15,6 +16,7 @@ section#johtaja{
 section#yhteys{
 	background-color: rgb(148, 120, 21);
 }
+*/
 /* Background cover image */
 div.main_cover{
 	background-image:url('../img/cover.jpg');
@@ -31,12 +33,3 @@ div.salmela_cover{
 div.sail_cover2{
 	background-image: url('../img/purjehdus2.jpg');
 }
-/* RWD (Responsive Web Development) sample */
-/*
-@media all and (max-device-width:1000px){
-        li{
-        	font-size: 45px;
-        	padding-right: 5%;
-        }
-}
-*/
