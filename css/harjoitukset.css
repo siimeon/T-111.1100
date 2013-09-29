@@ -27,15 +27,7 @@ div.long_sail_cover{
 	background-image:url('../img/purjehdus3.jpg');
 	height:1500px;
 }
-#long{
-	height:1500px;
-}
-@media only screen and (min-device-width : 1000px) and (min-width : 2000px) { 
-/* Big screens */
-	#long{
-		height:2200px;
-	}
-}
+
 /* Legacy code - replaced with partio.css */
 /*
 section#h1{

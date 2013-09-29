@@ -145,6 +145,25 @@ div.rights{
 aside.resourse{
 	display: none;
 }
+
+*[data-height="long"]{
+	height: 1500px !important;
+}
+td{
+	padding-right: 50px;
+}
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+td>a{
+	text-decoration: none;
+	color: white;
+}
+section>a{
+	color:white;
+	text-decoration: none;
+}
 @media only screen and (min-device-width : 1000px){
 	section{
 		padding-left: 70px;
@@ -177,8 +196,11 @@ aside.resourse{
 	span[data-rwd="huge-screen"]{
 		display: inline;
 	}
+	*[data-height="long"]{
+		height: 2200px !important;
+	}
 }
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
+@media only screen and (min-device-width : 320px) and (max-device-width : 550px) { 
 /* Smartphones */
 	li>a{
 		font-size: 40px;
@@ -215,7 +237,7 @@ aside.resourse{
 		font-size: 40px;
 	}
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 551px) and (max-device-width : 1024px){
 /* Tablet */
 	li>a{
 		font-size: 17px;
