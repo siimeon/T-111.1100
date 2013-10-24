@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta name="author" content="Simo Haakana">
 		<meta name="description" content="T-111.1100 Harjoitus 1.">
-		<title>HSV - Harjunalustan Siniveljet Ry</title>
+		<title>T-111.1100 Harjoitus 1.</title>
 		<!-- Load index.html page specific stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/h1.css">
 		<!-- Load general stylesheets for website -->
@@ -27,7 +27,7 @@
 		<link rel="stylesheet" type="text/css" href="css/partio.css">
 	</head>
 	<body>
-		<!-- Navigation bar made with nav, ul, li elements -->
+		<!-- Navigation bar is made inside header and it uses nav, ul and li elements -->
 		<header>
 			<nav>
 				<ul>
@@ -57,7 +57,7 @@
 				</ul>
 			</nav>
 		</header>
-		<!-- First cover photo. Photo source defined in index.css-->
+		<!-- First cover photo. Photo source defined in h1.css-->
 		<div class="main_cover cover" id="top" data-height="long"></div>
 		<!-- First text chpater -->
 		<section  id="lippukunta" data-bg-color="Kanervanvioletti">
@@ -69,6 +69,7 @@
 		</section>
 
 		<section id="perustelut" data-bg-color="Partionsininen">
+		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
 			<h1>Verkosivujen tekemisen perustelut</h1>
 			<article class="content">
 				Harjunalustan siniveljet on tänä syksynä rekisteröitynyt lippukunta ja siltä on muutaman vuoden puutuneet verkkosivu. Tästä syystä päätin tehdä lippukunnalleni sivut joita voisi käyttää niin sisäiseen tiedotukseen kuin lippukunnan markkinointia varten. Rekisteröity yhdistys tarvitsee myös vapaan tiedotus kanavan omien aikataulujen tiedottamiseen sekä omien virallisten tiedotteiden sekä kokous kutsujen jakamiseen.
@@ -76,6 +77,7 @@
 		</section>
 
 		<section id="design" data-bg-color="Hiilloksenoranssi">
+		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
 			<h1>Verkkosivujen design/ulkoasun perusteluja</h1>
 			<article class="content">
 				Sivujen ulkoasun lähtökohtana oli tehdä yksinkertaiset ja tällä hetkellä modernit verkkosivut. Tärkeimpiä ominaisuuksia näille sivuille oli saada sivut sovitettu mahdollisimman monelle laitteelle niin että ne näyttävät hyvältä 3”:sista yli 30”:tä tuumaisiin laitteisiin. Siksi yksinkertainen ja moderni design oli hyvä valinta laitteille. Inspiraatiota sivut ovat saaneet esim. Windows 8:sta, IOS7:sta ja The Verge:n muotokielestä. Design lähtökohtana oli tablet laitteet koska ihmiset ovat siirtymässä entistä nopeammin ”post-pc era”:lle (tietokonen jälkeinen aikakausi). Tablet laitteet ovat myös sinällään hyvä design lähtökohta koska jos saa designin toimimaan tablettilla niin se on myös helppo tuoda niin älypuhelimiin kuin pieniin kannettaviin(11”-13”). Sivuille valitsi long page tyylisen tyylin, joka sopii mielestäni hyvin niin kaikille laitteille sen graafisuuden vuoksi. Long page tyyliset sivut kokoavat yhdelle pitkälle .html sivulle suuren paljon tavaraa, ne sisältävät usein suuria kuvia ja hyödyntävät hyvin näytön/selaimen ikkunan leveyden ja ovat näin erittäin hyviä mobiili laitatella luettaviksi. Usein long page sivut RWD (responsive web desing) sivuja ja niihin on toteutettu animoituja siirtymiä, ja näitä asiaoita koitin myös tuoda Harjunalustan siniveljien sivuille tyylikkään lopputuloksen aikaan saamiseksi.
@@ -88,6 +90,7 @@
 			</article>
 		</section>
 		<section id="tekniikka" data-bg-color="Omenanvihrea">
+		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
 			<h1>Teknisen toteutuksen kuvaus</h1>
 			<article class="content">
 				Sivustolla on käytetty HTML 5, CSS3 ja jQuery joista jQuery on apu kirjasto perinteiselle JavaScriptille joka helpottaa elementtien käsittelyä. JQuery on valittu myös yhteensopivuuden varmistamiseksi, koska jQuery:llä saadaan aikaan paljon parempi selain tuki samalle koodille verrattuna perinteiseen JavaScriptiin. Sivusto pohjaa vahvasti HTML 5:een ja se on toteutettu tehtävän annossa vaadituilla semanttisilla elementeillä ja se myös sisältää kaikki vaaditus elementit elementti taulusta (http://joshduck.com/periodic-table.html). Sivusto menee myös läpi HTML 5 ja CSS validaatoreista ilman virheitä. Tarkkoja teknisiä toteutuksia löytyy koodiin sijoitetuista kommenteista.
@@ -102,6 +105,7 @@
 			</article>
 		</section>
 		<section data-bg-color="Puolukanpunainen">
+		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
 			<h1>Selain tuki ja tekniset kompromissit</h1>
 			<article class="content">
 				Nämä sivut toimivat kaikilla suurimmila käyttöjärjestelmillä (Windows, Mac, Linux(Ubuntu), IOS, Android, Windows Phone) ja niiden oletus selaimilla (Firefox, IE/IE mobile(9+), Safari ja Chrome). Parhaaseen käyttökokemukseen suosittelen Applen Iphone, Ipad ja Mac laitteita koska sivut on kehitetty niitä hyväksi käyttäen. HTML5, CSS3 ja jQuery ansiosta kuitenkin sivustot toimivat melko saman laisesti kaikissa HTML5 tukevilla laiteilla ja selaimilla.
@@ -115,33 +119,51 @@
 				<table>
 					<tr>
 						<td><a href="http://www.w3schools.com/html/html5_intro.asp">HTML5</a></td>
-						<td><a href="http://www.w3schools.com/html/html5_intro.asp"><img src="img/html5.png" width="100px" alt="HTML5 Logo"></a></td>
+						<td><a href="http://www.w3schools.com/html/html5_intro.asp"><img src="img/html5.png" width="125" alt="HTML5 Logo"></a></td>
 					</tr>
 					<tr>
 						<td><a href="http://www.w3schools.com/css3/default.asp">CSS3</a></td>
-						<td><a href="http://www.w3schools.com/css3/default.asp"><img src="img/css3.png" width="100px" alt="CSS3 Logo"></a></td>
+						<td><a href="http://www.w3schools.com/css3/default.asp"><img src="img/css3.png" width="100" alt="CSS3 Logo"></a></td>
 					</tr>
 					<tr>
 						<td><a href="http://jquery.com/">jQuery</a></td>
-						<td><a href="http://jquery.com/"><img src="img/jquery.png" width="200px" alt="jQuery Logo"></a></td>
+						<td><a href="http://jquery.com/"><img src="img/jquery.png" width="200" alt="jQuery Logo"></a></td>
 					</tr>
 					<tr>
 						<td><a href="http://www.w3schools.com/">W3schools</a></td>
-						<td><a href="http://www.w3schools.com/"><img src="img/w3s.png" width="200px" alt="w3schools Logo"></a></td>
+						<td><a href="http://www.w3schools.com/"><img src="img/w3s.png" width="200" alt="w3schools Logo"></a></td>
 					</tr>
 					<tr>
-						<td><a href="http://www.w3.org/html/wg/drafts/microdata/master/">HTML5 Microdata</a></td>
+						<td><a href="http://toiminta.partio.fi/viestinta/graafinen-ohje">Suomen Partiolaisetn graafinen ohje</a></td>
+						<td><a href="http://toiminta.partio.fi/viestinta/graafinen-ohje"><img src="img/partio_logo.png" alt="Suomen Partiolaiset" width="200"></a></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.w3.org/html/wg/drafts/microdata/master/">HTML5 Microdata</a></td><td></td>
 					</tr>
 					<tr>
 						<td><a href="http://schema.org/">schema.org</a></td>
+						<td></td>
 					</tr>
 					<tr>
 						<td><a href="http://www.stephentgilbert.com/mediaqueries">IOS @media queries</a></td>
+						<td></td>
 					</tr>
+				</table>
+				<table>
+					<tr><td><b>HTML5 Validointi</b></td></tr>
+					<tr><td><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fdime.tml.hut.fi%2F~haakans1%2F">index.html</a></td></tr>
+					<tr><td><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fdime.tml.hut.fi%2F~haakans1%2Fharjoitukset.html">harjoitukset.html</a></td></tr>
+					<tr><td><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fdime.tml.hut.fi%2F~haakans1%2Fprojektityo.html">projektityo.html</a></td></tr>
+					<tr><td><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fdime.tml.hut.fi%2F~haakans1%2Fharjoitus1.html">harjoitus1.html</a></td></tr>
+					<tr><td><b>CSS3 Validointi</b></td></tr>
+					<tr><td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dime.tml.hut.fi/~haakans1/">index.html</a></td></tr>
+					<tr><td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dime.tml.hut.fi/~haakans1/harjoitukset.html">harjoitukset.html</a></td></tr>
+					<tr><td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dime.tml.hut.fi/~haakans1/projektityo.html">projektityo.html</a></td></tr>
+					<tr><td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dime.tml.hut.fi/~haakans1/harjoitus1.html">harjoitus1.html</a></td></tr>
 				</table>
 			</aside>
 		</section>
-		<!-- Last cover photo. Photo source defined in index.css -->
+		<!-- Last cover photo. Photo source defined in h1.css -->
 		<div class="sail_cover cover" data-cover="last" data-height="long"></div>
 		<!-- Footer element begins -->
 		<!-- In footer element is Suomen Partiolaisten logo and notice about copyright and that this is T-111-1100 Aalto University course project. Logo/Image is in one div and information is in second div element -->
@@ -151,7 +173,7 @@
 				<a href="http://www.partio.fi"><img src="img/partio_logo.png" alt="Suomen Pariolaisten Logo"></a>
 			</div>
 			<div class="rights">
-				<p >&copy; Copyright 2013 by <a href="http://www.github.com/siimeon" itemprop="url"><span itemprop="name">Simo Haakana</span></a><a href="mailto:simo.haakana@aalto.fi" itemprop="email"></a></p>
+				<p >&copy; Copyright 2013 by <a href="http://www.github.com/siimeon" itemprop="url"><span itemprop="name">Simo Haakana</span></a><span class="sphide" itemprop="email">simo.haakana@aalto.fi</span></p>
 				<p ><a href="http://www.aalto.fi">Made to <span itemprop="affiliation">Aalto University</span> courser T-111.1100</a></p>
 				<p>All Rights Reserved</p>
 			</div>

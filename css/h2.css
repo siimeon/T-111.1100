@@ -1,0 +1,23 @@
+/* Copyright 2013 by Simo Haakana http://www.github.com/siimeon */
+/* All Rights Reserved */
+/* This css file is made for harjoitus1.html */
+
+/* Background cover images */
+div.main_cover{
+	background-image:url('../img/harjoitus2/web_pojatSyomassa.jpg');
+}
+div.osku_cover{
+	background-image: url('../img/harjoitus2/web_OskarLaavussa.jpg');
+}
+div.soutu_cover{
+	background-image: url('../img/harjoitus2/web_Soutamassa.jpg');
+}
+div.talvi_teltta{
+	background-image: url('../img/harjoitus2/web_Talviteltta.jpg');
+}
+.print{
+	width: 80%;
+}
+.web{
+	width: 80%;
+}
