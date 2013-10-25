@@ -5,12 +5,14 @@
 	<head>
 		<!-- Define utf-8 -->
 		<meta charset="utf-8"> 
+		<meta name="author" content="Simo Haakana">
 		<title>Harjoitukset - T-111.1100</title>
 		<!-- Load harjoitukset.html page specific stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/harjoitukset.css">
 		<!-- Load general stylesheets for website -->
 		<link rel="stylesheet" type="text/css" href="css/hsv.css">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/partio.css">
 		<!-- Loading special font form google fonts http://www.google.com/fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
 		<!-- Loading favicon -->
@@ -22,75 +24,163 @@
 		<script type="text/javascript" src="js/scroll.js"></script>
 		<!-- Loading my own/custom javascript/jQuery for show and hide for harjoitus element -->
 		<script type="text/javascript" src="js/show.js"></script>
+		<script type="text/javascript" src="js/show2.js"></script>
+		<script type="text/javascript" src="js/harjoitus3.js"></script>
 	</head>
 	<body>
-		<!-- Navigation bar made with nav, ul, li elements -->
+		<!-- Navigation bar is made inside header and it uses nav, ul and li elements -->
 		<header>
 			<nav>
 				<ul>
-					<li><a href="#top">Harjunalustan Siniveljet Ry</a></li>
-					<li id="open_btn">Etusivu</li>
-					<li><a href="#h1">Harjoitus 1.</a></li>
-					<li><a href="#h2">Harjoitus 2.</a></li>
-					<li><a href="#h3">Harjoitus 3.</a></li>
-					<li><a href="#h4">Harjoitus 4.</a></li>
-					<li><a href="#h5">Harjoitus 5.</a></li>
-					<li><a href="projektityo.html">Projektityö</a></li>
+					<li><a href="#top" data-name="title">Harjunalustan Siniveljet Ry</a></li>
+					<li data-rwd="mobile_hide" id="open_btn">Etusivu</li>
+					<li><a data-rwd="mobile_hide" href="#h1">Harjoitus 1.</a></li>
+					<li><a data-rwd="mobile_hide" href="#h2"><span data-rwd="huge-screen">Harjoitus</span> 2.</a></li>
+					<li><a data-rwd="mobile_hide" href="#h3"><span data-rwd="huge-screen">Harjoitus</span> 3.</a></li>
+					<li><a data-rwd="mobile_hide" href="#h4"><span data-rwd="huge-screen">Harjoitus</span> 4.</a></li>
+					<li><a data-rwd="mobile_hide" href="#h5"><span data-rwd="huge-screen">Harjoitus</span> 5.</a></li>
+					<li><a data-rwd="mobile_hide" href="projektityo.html">Projektityö</a></li>
+					<li id="fplus">+</li>
+					<li id="fminus">-</li>
 				</ul>
+				<!-- svg elemnt is used to draw menu icon for smartphones -->
+				<!-- #mobile_menu is hiden for all other devices except smarphones -->
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="mobile_menu">
+  					<g fill="none" stroke="white">
+						<path stroke-width="6" d="M5 20 l60 0" />
+						<path stroke-width="6" d="M5 30 l60 0" />
+						<path stroke-width="6" d="M5 40 l60 0" />
+  					</g>
+				</svg>
 				<ul id="show_menu" class="hide">
 					<li><a href="index.html">Etusivu</a></li>
 					<li><a href="index.html#lippukunta">Lippukunta</a></li>
 					<li><a href="index.html#toiminta">Toiminta</a></li>
-					<li><a href="index.html#johtaja">Johtajisto</a></li>
+					<li><a href="index.html#ryhma">Ryhmät</a></li>
 					<li><a href="index.html#yhteys">Ota Yhteyttä</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div class="main_cover cover" id="top"></div>
-		<section id="h1">
+		<section id="h1" data-bg-color="Omenanvihrea">
 			<h1>Harjoitus 1.</h1>
-			<article class="content">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
+			<article class="content" id="con1">
+				Harjunalustan siniveljet ry on meripartio lippukunta Lahdesta. Harjunalustan siniveljet on perinteikäs lippukunta, joka toimii Lahdessa lähinnä Salpausselän seurakunnan alueella ja purjehtii Vesijärvellä ja Päijänteellä. Toiminta pitää sisällään monenlaista toimintaa niin maalla kuin vesilläkin kuten purjehdusta, aktiivista viikko tapaamisia, leirejä ja retkiä
+				<br><br>
+				Harjunalustan siniveljet on tänä syksynä rekisteröitynyt lippukunta ja siltä on muutaman vuoden puutuneet verkkosivu. Tästä syystä päätin tehdä lippukunnalleni sivut joita voisi käyttää niin sisäiseen tiedotukseen kuin lippukunnan markkinointia varten. Rekisteröity yhdistys tarvitsee myös vapaan tiedotus kanavan omien aikataulujen tiedottamiseen sekä omien virallisten tiedotteiden sekä kokous kutsujen jakamiseen.
 			</article>
+			<a href="harjoitus1.html"><h4 class="button">Lue lissää</h4></a>
+			<h4 class="button" id="btn1">Harjoituksessa käytettyjä resursseja</h4>
+			<aside class="resourse" id="aside_1">
+				<table>
+					<tr>
+						<td><a href="http://www.w3schools.com/html/html5_intro.asp">HTML5</a></td>
+						<td><a href="http://www.w3schools.com/html/html5_intro.asp"><img src="img/html5.png" width="125" alt="HTML5 Logo"></a></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.w3schools.com/css3/default.asp">CSS3</a></td>
+						<td><a href="http://www.w3schools.com/css3/default.asp"><img src="img/css3.png" width="100" alt="CSS3 Logo"></a></td>
+					</tr>
+					<tr>
+						<td><a href="http://jquery.com/">jQuery</a></td>
+						<td><a href="http://jquery.com/"><img src="img/jquery.png" width="200" alt="jQuery Logo"></a></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.w3schools.com/">W3schools</a></td>
+						<td><a href="http://www.w3schools.com/"><img src="img/w3s.png" width="200" alt="w3schools Logo"></a></td>
+					</tr>
+					<tr>
+						<td><a href="http://toiminta.partio.fi/viestinta/graafinen-ohje">Suomen Partiolaisetn graafinen ohje</a></td>
+						<td><a href="http://toiminta.partio.fi/viestinta/graafinen-ohje"><img src="img/partio_logo.png" alt="Suomen Partiolaiset" width="200"></a></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.w3.org/html/wg/drafts/microdata/master/">HTML5 Microdata</a></td><td></td>
+					</tr>
+					<tr>
+						<td><a href="http://schema.org/">schema.org</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.stephentgilbert.com/mediaqueries">IOS @media queries</a></td>
+						<td></td>
+					</tr>
+				</table>
+				<table>
+					<tr><td><b>HTML5 Validointi</b></td></tr>
+					<tr><td><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fdime.tml.hut.fi%2F~haakans1%2F">index.html</a></td></tr>
+					<tr><td><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fdime.tml.hut.fi%2F~haakans1%2Fharjoitukset.html">harjoitukset.html</a></td></tr>
+					<tr><td><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fdime.tml.hut.fi%2F~haakans1%2Fprojektityo.html">projektityo.html</a></td></tr>
+					<tr><td><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fdime.tml.hut.fi%2F~haakans1%2Fharjoitus1.html">harjoitus1.html</a></td></tr>
+					<tr><td><b>CSS3 Validointi</b></td></tr>
+					<tr><td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dime.tml.hut.fi/~haakans1/">index.html</a></td></tr>
+					<tr><td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dime.tml.hut.fi/~haakans1/harjoitukset.html">harjoitukset.html</a></td></tr>
+					<tr><td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dime.tml.hut.fi/~haakans1/projektityo.html">projektityo.html</a></td></tr>
+					<tr><td><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dime.tml.hut.fi/~haakans1/harjoitus1.html">harjoitus1.html</a></td></tr>
+				</table>
+			</aside>
 		</section>
 		<div class="winter_salmela_cover cover"></div>
-		<section id="h2">
+		<section id="h2" data-bg-color="Hiekanruskea">
 			<h1>Harjoitus 2.</h1>
 			<article class="content">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
+				Harjoitus 2. oli tarkoituksena luoda flyer eli mainoslehtinen sivuston teemaan sopien. Partio teemaan sopien tein valitsin muutaman kuvan joista tein mainoslehtisen lippukunnalle.
+				<br><br>
+				Mainoslehtiseen valittiin kuvia kuluneilta Lapin leireiltä ja idean oli luoda sekä sisäiseen että ulkoiseen käyttöön sopiva mainoslehtinen. Mainoslehtinen tehtiin hyvin minimalistisesti ja se ei sisällä tietoa vaan luo ainoastaan mielikuvaa talvisesta tunturi maisemasta. Mainoslehtisen tarkoituksena on siis herätellä mielenkiintoa eteenkin lippukunnan sisällä tulevasta lapin leiristä. Mainos sopii erinomaisesti web mainokseksi, jonka lisäksi voitaisiin tehdä sivusto mainoslehtisen ympärille, jossa olisi tietoa tulevasta leiristä tarkemmin. Mainoksen ’teaser’ ominaisuus toimii etenkin lippukunnan sisällä, koska Lapin leiri on vuosikymmenien perinne lippukunnassa ja viikoittaiseen kokoustilaan mainoksen laittaminen tulosteena herättäisi keskustelua, mielenkiintoa ja toivottavasti myös osallistuja määrää tälle mahtavalle leirille. 
 			</article>
+			<a href="harjoitus2.html#selitys"><h4 class="button">Lue Lisää</h4></a>
+			<center><img src="img/harjoitus2/web.jpg" class="web" alt="RGB Kuva"></center>
+			<h4 class="button" id="btn2">Harjoituksessa käytettyjä resursseja</h4>
+			<aside class="resourse" id="aside_2">
+				<table>
+				<tr>
+					<td><a href="http://www.aarokurkela.fi/"><img src="img/AaroKurkelaLogo.png" alt="Aaro Kurkela Logo"></a></td>
+					<td><a href="http://www.aarokurkela.fi/">Alkuperäisten kuvin &copy; Copyright Aaro Kurkela</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://www.adobe.com/mena_en/products/photoshop.html"><img src="img/Adobe_Photoshop_CS6_icon.png" alt="css6" height="50"></a></td>
+					<td><a href="http://www.adobe.com/mena_en/products/photoshop.html">Adobe Photoshop CSS6</a></td>
+				</tr>
+			</table>
+			</aside>
 		</section>
 		<div class="sotka_cover cover"></div>
-		<section id="h3">
+		<section id="h3" data-bg-color="Kanervanvioletti">
 			<h1>Harjoitus 3.</h1>
 			<article class="content">
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
 			</article>
+			<h4 class="button" id="btn3">Harjoituksessa käytettyjä resursseja</h4>
+			<aside class="resourse" id="aside_3">HSV website resourses</aside>
 		</section>
 		<div class="tent_cover cover"></div>
-		<section id="h4">
+		<section id="h4" data-bg-color="Hiilloksenoranssi">
 			<h1>Harjoitus 4.</h1>
 			<article class="content">
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
 			</article>
+			<h4 class="button" id="btn4">Harjoituksessa käytettyjä resursseja</h4>
+			<aside class="resourse" id="aside_4">HSV website resourses</aside>
 		</section>
 		<div class="lapland_cover cover"></div>
-		<section id="h5">
+		<section id="h5" data-bg-color="Puolukanpunainen">
 			<h1>Harjoitus 5.</h1>
 			<article class="content">
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
 			</article>
+			<h4 class="button" id="btn5">Harjoituksessa käytettyjä resursseja</h4>
+			<aside class="resourse" id="aside_5">HSV website resourses</aside>
 		</section>
-		<div class="fall_salmela_cover cover"></div>
+		<div class="fall_salmela_cover cover" data-cover="last"></div>
 		<!-- Footer element begins -->
 		<!-- In footer element is Suomen Partiolaisten logo and notice about copyright and that this is T-111-1100 Aalto University course project. Logo/Image is in one div and information is in second div element -->
-		<footer>
+		<div id="footer_holder"></div>
+		<footer itemscope itemtype="http://schema.org/Person">
 			<div class="footer_logo">
 				<a href="http://www.partio.fi"><img src="img/partio_logo.png" alt="Suomen Pariolaisten Logo"></a>
 			</div>
 			<div class="rights">
-				<p>&copy; Coppyright 2013 by <a href="https://github.com/siimeon">Simo Haakana</a></p>
-				<p><a href="http://www.aalto.fi">Made to Aalto University courser T-111.1100</a></p>
+				<p >&copy; Copyright 2013 by <a href="http://www.github.com/siimeon" itemprop="url"><span itemprop="name">Simo Haakana</span></a><span class="sphide" itemprop="email">simo.haakana@aalto.fi</span></p>
+				<p ><a href="http://www.aalto.fi">Made to <span itemprop="affiliation">Aalto University</span> courser T-111.1100</a></p>
 				<p>All Rights Reserved</p>
 			</div>
 		</footer>

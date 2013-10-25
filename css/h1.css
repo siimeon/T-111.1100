@@ -1,0 +1,11 @@
+/* Copyright 2013 by Simo Haakana http://www.github.com/siimeon */
+/* All Rights Reserved */
+/* This css file is made for harjoitus1.html */
+
+/* Background cover images */
+div.main_cover{
+	background-image:url('../img/pojat.jpg');
+}
+div.sail_cover{
+	background-image: url('../img/purjehdus4.jpg');
+}

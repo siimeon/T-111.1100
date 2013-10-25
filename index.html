@@ -4,17 +4,22 @@
 <html>
 	<head>
 		<!--Define utf-8 -->
-		<meta charset="utf-8"> 
+		<meta charset="utf-8">
+		<!-- Seting up some meta data -->
+		<meta name="author" content="Simo Haakana">
+		<meta name="keywords" content="HSV, Harjunalustan Siniveljet, Lahti, Partio">
+		<meta name="description" content="Harjunalustan Siniveljet Ry partio lippukunnan verkkosivut">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<title>HSV - Harjunalustan Siniveljet Ry</title>
 		<!-- Load index.html page specific stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<!-- Load general stylesheets for website -->
 		<link rel="stylesheet" type="text/css" href="css/hsv.css">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/partio.css">
 		<!-- Loading special font form google fonts http://www.google.com/fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
 		<!-- Loading favicon -->
-		<link rel="icon" type="image/ico" href="img/huivi.ico">
+		<link rel="icon" type="image/png" href="hsv_logo.png">
 		<!-- Loading jQuery javascripts -->
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -22,93 +27,136 @@
 		<script type="text/javascript" src="js/scroll.js"></script>
 		<!-- Loading my own/custom javascript/jQuery for show and hide for harjoitus element -->
 		<script type="text/javascript" src="js/show.js"></script>
-		<script type="text/javascript" src="js/show2.js"></script>
+		<!-- Apple IOS -->
+		<link rel="apple-touch-icon" href="/hsv_logo.png"/>
+		<script type="text/javascript" src="js/harjoitus3.js"></script>
 	</head>
 	<body>
-		<!-- Navigation bar made with nav, ul, li elements -->
+		<!-- Navigation bar is made inside header and it uses nav, ul and li elements -->
 		<header>
 			<nav>
 				<!-- Main navigation menu -->
 				<ul>
-					<li><a href="#top">Harjunalustan Siniveljet Ry</a></li>
-					<li id="mobile_menu">
-						<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  							<g fill="none" stroke="white">
-					    		<path stroke-width="6" d="M5 20 l60 0" />
-					    		<path stroke-width="6" d="M5 30 l60 0" />
-					    		<path stroke-width="6" d="M5 40 l60 0" />
-  							</g>
-						</svg>
-					</li>
-					<li><a name="mobile_hide" href="#lippukunta">Lippukunta</a></li>
-					<li><a name="mobile_hide" href="#toiminta">Toiminta</a></li>
-					<li><a name="mobile_hide" href="#johtaja">Johtajisto</a></li>
-					<li><a name="mobile_hide" href="#yhteys">Ota Yhteyttä</a></li>
-					<li name="mobile_hide" id="open_btn">Harjoitukset</li>
+					<li><a data-name="title" href="#top">Harjunalustan Siniveljet Ry</a></li>
+					<li><a data-rwd="mobile_hide" href="#lippukunta">Lippukunta</a></li>
+					<li><a data-rwd="mobile_hide" href="#toiminta">Toiminta</a></li>
+					<li><a data-rwd="mobile_hide" href="#ryhma">Ryhmät</a></li>
+					<li><a data-rwd="mobile_hide" href="#yhteys">Ota Yhteyttä</a></li>
+					<li data-rwd="mobile_hide" id="open_btn">Harjoitukset</li>
 				</ul>
+				<!-- svg elemnt is used to draw menu icon for smartphones -->
+				<!-- #mobile_menu is hiden for all other devices except smarphones -->
+				<div id="mobile_menu">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  					<g fill="none" stroke="white">
+							<path stroke-width="6" d="M5 20 l60 0" />
+							<path stroke-width="6" d="M5 30 l60 0" />
+							<path stroke-width="6" d="M5 40 l60 0" />
+	  					</g>
+					</svg>
+				</div>
 				<!-- 'Dropdown' navigation menu -->
-				<!-- ul.hide default hiden, defined in index.css-->
+				<!-- ul.hide default hiden, defined in hsv.css-->
 				<ul id="show_menu" class="hide">
 					<li><a href="harjoitukset.html">Harjoitukset</a></li> 
-					<li><a href="harjoitukset.html#h1">1.</a></li>
-					<li><a href="harjoitukset.html#h2">2.</a></li>
-					<li><a href="harjoitukset.html#h3">3.</a></li>
-					<li><a href="harjoitukset.html#h4">4.</a></li>
-					<li><a href="harjoitukset.html#h5">5.</a></li>
+					<li><a href="harjoitukset.html#h1"><span data-rwd="huge-screen">Harjoitus</span>1.</a></li>
+					<li><a href="harjoitukset.html#h2"><span data-rwd="huge-screen">Harjoitus</span>2.</a></li>
+					<li><a href="harjoitukset.html#h3"><span data-rwd="huge-screen">Harjoitus</span>3.</a></li>
+					<li><a href="harjoitukset.html#h4"><span data-rwd="huge-screen">Harjoitus</span>4.</a></li>
+					<li><a href="harjoitukset.html#h5"><span data-rwd="huge-screen">Harjoitus</span>5.</a></li>
 					<li><a href="projektityo.html">Projektityö</a></li>
-				</ul>
-				
+				</ul>		
 			</nav>
 		
 		</header>
+		<img src="hsv_logo.png" alt="hsv logo" class="hsv_logo">
 		<!-- First cover photo. Photo source defined in index.css-->
 		<div class="main_cover cover" id="top"></div>
 		<!-- First text chpater -->
-		<section  id="lippukunta">
-			<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
+		<section  id="lippukunta" data-bg-color="Kanervanvioletti">
+			<!-- Heading is in single line and article.content is set to go two columns in hsv.css -->
 			<h1>Lippukunta</h1>
 			<article class="content">
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
+				Harjunalustan Siniveljet on perinteikäs Lahtelainen meripatio lippukunta, jolla asenne on Aina Valmiina. Harjunalustan Siniveljet tarjoavat parasta mahdollista partio toimintaa jota Lahden alueelta löytyy ja antaa jäsenilleen mahdollisuudet sekä valmiudet päästä kokemaan huikaisevia elämyksiä pimeistä syys öistä, talvisen tunturin huipuille tai kesäisen Vesijärven laineille. Meidän lippukunnasamme on niin poikia kuin tyttöjäkin eli olemme sekalippukunta. Jos kiinnostuit niin ota yhteyttä! Toivotamme kaikki tervetulleiksi tutustumaan toimintaamme.
 			</article>
+			<a href="#yhteys"><h3 class="button">Ota yhteyttä</h3></a>
 		</section>
 		<!-- Second cover photo. Photo source defined in index.css-->
 		<div class="sail_cover cover"></div>
-		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
-		<section id="toiminta">
+		<!-- Heading is in single line and article.content is set to go two columns in hsv.css -->
+		<section id="toiminta" data-bg-color="Hiilloksenoranssi">
 			<h1>Toiminta</h1>
 			<article class="content" >
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus 
+				Lippukunnalla on aktiivista toimintaa kaikkein ikäisille partiolaisille. Lippukunnan toimintaa kuuluu aktiivista viikkotoimintaa, retkiä, talkoita, leirejä sekä kaikkea muuta toimintaa mitä vain partio voi tarjota. Lippukunnalla on aktiivisia viikkotoimintaa tällä hetkellä kolmessa ryhmässä joista kaksi on sudenpentu ryhmiä ja yksi seikkailija/tarpoja ryhmä. Viikkotoiminnan tarkoituksena on oppia uusia taitoja ja viihtyä partio henkisen toiminnan parissa. Viikkotoiminta antaa myös loistavat valmiudet lippukunnan järjestämille retkille, leireille ja purjehduksille joita toteutetaan pää asiallisesti viikkotoiminta ryhmissä. Purjehduksia pyritään järjestämään mahdollisimman paljon ja pyrkimyksenä on että jokainen ryhmä kävisi toiminta vuoden aikana kahdesti purjehtimissa lippukunnan veneellä Telkällä. Retkiä ja leirejä järjestetään pää asiallisesti viikonloppuisin Lahden lähi ympäristössä kuten lippukunnan omalla partio kämpällä Salmelassa joka sijaitsee Padasjoella. Lippukunta järjestää myös vuosittain pääsiäisleirin sekä kesäleirin. Pääsiäisleiri on perinteisesti pidetty upeissa puitteissa Lapin erämaassa ja kesäleiri Salmelassa, josta päästä kätevästi niin maastoon kuin vesillekin Päijänteelle.
 			</article>
+			<a href="#ryhma"><h3 class="button">Katso ryhmät</h3></a>
 		</section>
 		<!-- Third cover photo. Photo source defined in index.css -->
 		<div class="lapland_cover cover"></div>
-		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
-		<section id="johtaja">
-			<h1>Johtajat</h1>
-			<article class="content" >
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui.
-			</article>
+		<section id="ryhma" data-bg-color="Omenanvihrea">
+		<!-- This section contains table with team meeting times -->
+			<h1>Ryhmät</h1>
+			<table>
+				<tr>
+					<td><div class="map" id="salppuri"><a href="http://goo.gl/maps/q6SP7">Iso Kartta</a></div></td>
+					<td><div class="map" id="riihela"><a href="http://goo.gl/maps/1cgnM">Iso Kartta</a></div></td>
+					<td><div class="map" id="harjunalusta"><a href="http://goo.gl/maps/gk5zT">Iso Kartta</a></div></td>
+				</tr>
+				<tr>
+					<td>Sudenpentu</td>
+					<td>Sudenpentu</td>
+					<td>Seikkalija/Tarpoja</td>
+				</tr>
+				<tr>
+					<td>Tiistai</td>
+					<td>Torstai</td>
+					<td>Torstai</td>
+				</tr>
+				<tr>
+					<td>17:00-18:15</td>
+					<td>17:30-18:30</td>
+					<td>17:00-18:30</td>
+				</tr>
+					<td>Salpauslän kirkko</td>
+					<td>Riihelän Seurakuntakoti</td>
+					<td>Harjunalustan Seurakuntakoti</td>
+			</table>
+			
+			
+			
 		</section>
 		<!-- Fourth cover photo. Photo source defined in index.css -->
 		<div class="sail_cover2 cover"></div>
-		<!-- Heading is in single line and div.content is set to go two columns in hsv.css -->
-		<section  id="yhteys">
+		<!-- Heading is in single line and article.content is set to go two columns in hsv.css -->
+		<section  id="yhteys" data-bg-color="Hiekanruskea">
 			<h1>Ota Yhteyttä</h1>
 			<article class="content" >
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui.
+			Jos kiinnostuit toiminnastamme lippukunnastamme, halut mukaan toimintaamme tai vain kuulla lisää mitä lippuikkunalle on tarjota juuri sinulle niin älä epäröi ottaa meihin yhteyttä. Lippukunnan johtajan Henri Gale antaa mielellään lisätietoja ja vastaa lippukuntaa ja toimintaa koskeviin kysymyksiin.
 			</article>
+			<br>
+			<!-- Table contains HTML5 Microdata -->
+			<table itemscope itemtype="http://schema.org/Person">
+				<tr>
+					<td><img src="img/emilia.jpg" alt="Emilia Sartamo"  class="face"></td>
+					<td itemprop="name">Emilia Sartamo</td>
+					<td itemprop="jobTitle">Lippukunnanjohtaja</td>
+					<td itemprop="telephone">041 5021781</td>
+				</tr>
+			</table>
 		</section>
 		<!-- Last cover photo. Photo source defined in index.css -->
-		<div class="salmela_cover cover" ></div>
+		<div class="salmela_cover cover" data-cover="last"></div>
 		<!-- Footer element begins -->
 		<!-- In footer element is Suomen Partiolaisten logo and notice about copyright and that this is T-111-1100 Aalto University course project. Logo/Image is in one div and information is in second div element -->
-		<footer>
+		<!-- Footer contains HTML5 Microdata -->
+		<div id="footer_holder"></div>
+		<footer itemscope itemtype="http://schema.org/Person">
 			<div class="footer_logo">
 				<a href="http://www.partio.fi"><img src="img/partio_logo.png" alt="Suomen Pariolaisten Logo"></a>
 			</div>
 			<div class="rights">
-				<p>&copy; Coppyright 2013 by <a href="https://github.com/siimeon">Simo Haakana</a></p>
-				<p><a href="http://www.aalto.fi">Made to Aalto University courser T-111.1100</a></p>
+				<p >&copy; Copyright 2013 by <a href="http://www.github.com/siimeon" itemprop="url"><span itemprop="name">Simo Haakana</span></a><span class="sphide" itemprop="email">simo.haakana@aalto.fi</span></p>
+				<p ><a href="http://www.aalto.fi">Made to <span itemprop="affiliation">Aalto University</span> courser T-111.1100</a></p>
 				<p>All Rights Reserved</p>
 			</div>
 		</footer>

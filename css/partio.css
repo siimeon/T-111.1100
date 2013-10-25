@@ -1,0 +1,41 @@
+/* Copyright 2013 by Simo Haakana http://www.github.com/siimeon */
+/* All Rights Reserved */
+/* partio.css contains rgb colors of official Suomen Partiolaiste graphic image */
+/* See more http://toiminta.partio.fi/viestinta/graafinen-ohje */
+/* This css file HTML5 compatible */
+
+body{
+	font-family: verdana;
+}
+
+/* Backround colors */
+*[data-bg-color="Partionsininen"]{
+	background-color: rgb(37, 55, 100);
+}
+*[data-bg-color="Auringonkeltainen"]{
+	background-color: rgb(245, 234, 46);
+}
+*[data-bg-color="Hiilloksenoranssi"]{
+	background-color: rgb(212, 121, 30);
+}
+*[data-bg-color="Kanervanvioletti"]{
+	background-color: rgb(94, 15, 117);
+}
+*[data-bg-color="Metsanvihrea"]{
+	background-color: rgb(51, 101, 46);
+}
+*[data-bg-color="Kallionharmaa"]{
+	background-color: rgb(194, 194, 192);
+}
+*[data-bg-color="Omenanvihrea"]{
+	background-color: rgb(169, 206, 108);
+}
+*[data-bg-color="Puolukanpunainen"]{
+	background-color: rgb(163, 0, 58);
+}
+*[data-bg-color="Hiekanruskea"]{
+	background-color: rgb(148, 120, 21);
+}
+*[data-bg-color="Karhunruskea"]{
+	background-color: rgb(110, 71, 10);
+}

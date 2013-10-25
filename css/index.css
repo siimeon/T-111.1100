@@ -3,6 +3,7 @@
 /* This css file is made for index.html */
 
 /* Section background colors */
+/*
 section#lippukunta{
 	background-color: rgb(94, 15, 117);
 }
@@ -15,6 +16,7 @@ section#johtaja{
 section#yhteys{
 	background-color: rgb(148, 120, 21);
 }
+*/
 /* Background cover image */
 div.main_cover{
 	background-image:url('../img/cover.jpg');
@@ -31,39 +33,59 @@ div.salmela_cover{
 div.sail_cover2{
 	background-image: url('../img/purjehdus2.jpg');
 }
-/* RWD (Responsive Web Development) sample */
-/*
-@media all and (max-device-width:1000px){
-        li{
-        	font-size: 45px;
-        	padding-right: 5%;
-        }
+.map{
+	-webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+	width: 300px;
+	height: 300px;
+	transition:width 1.2s, height 1.2s;
+	-webkit-transition:width 1.2s, height 1.2s, -webkit-transform 1.2s;
 }
-*/
-#mobile_menu{
-	display:none;
+.map:hover{
+	height: 450px;
+	width: 450px;
 }
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
-/* Smartphones */
-	li>a{
-		font-size: 40px;
+div.map>a{
+	color: blue;
+	text-decoration: none;
+	opacity: 0.3;
+	transition:opacity 0.8s;
+	-webkit-transition:opacity 0.8s, -webkit-transform 0.8s;
+	position: relative;
+	top: 20px;
+}
+div.map>a:hover{
+	opacity: 0.8;
+}
+@media only screen and (min-device-width : 551px) and (max-device-width : 1024px){
+	.map{
+		height: 250px;
+		width: 250px;
 	}
-	li{
-		font-size: 40px;
+	.map:hover{
+		height: 275px;
+		width: 275px;	
 	}
-	li>a[name="mobile_hide"]{
-		display: none;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 550px) { 
+	.map{
+		-webkit-border-radius: 999px;
+		height: 200px;
+		width: 40px;
 	}
+	.map:hover{
+		height: 300px;
+		width: 200px;
+	}
+}
+#salppuri{
+	background-image: url('../img/salppuri2.png');
 	
-	li[name="mobile_hide"]{
-		display: none;
-	}
-	#mobile_menu{
-		display: inline;
-		margin-left: 20%;
-	}
-	svg{
-		height: 50px;
-		width: 50px;
-	}
+}
+#harjunalusta{
+	background-image: url('../img/harjunalusta2.png');
+}
+#riihela{
+	background-image: url('../img/riihela2.png')
 }
