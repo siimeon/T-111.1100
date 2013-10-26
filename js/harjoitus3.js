@@ -30,8 +30,9 @@ $(document).ready(function(){
 		console.log(font_size);
 	});
 	$('body').append('<div data-bg-color="Hiekanruskea" id="cordinate"></div>');
-	$('#cordinate').css('height', '50px');
-	$('#cordinate').css('width', '300px');
+	$('#cordinate').css('height', '30px');
+	$('#cordinate').css('width', '250px');
+	$('#cordinate').css('font-size', '18px');
 	$('#cordinate').css('border-radius', '10px');
 	$('#cordinate').css('border-width', '5px');
 	$('#cordinate').css('border-color', 'white');
@@ -41,7 +42,7 @@ $(document).ready(function(){
 	$('#cordinate').css('padding-top', '10px');
 	$('#cordinate').css('z-index', '100');
 	$('body').mousemove(function( event ) {
-		$('#cordinate').css('left', event.pageX);
+		$('#cordinate').css('left', event.pageX+10);
 		$('#cordinate').css('top', event.pageY);
 		$('#cordinate').text('X-axel: '+event.pageX + 'px  Y-axal: '+event.pageY+'px');
 	});
