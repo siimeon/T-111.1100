@@ -1,0 +1,21 @@
+.marquee {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 60s linear infinite;
+    -webkit-animation: marquee 60s linear infinite;
+}
+.marquee:hover {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+@-webkit-keyframes marquee{
+	0%   { text-indent: 27.5em }
+    100% { text-indent: -105em }
+}
+@keyframes marquee {
+    0%   { text-indent: 27.5em }
+    100% { text-indent: -105em }
+}
