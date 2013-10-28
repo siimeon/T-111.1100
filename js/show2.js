@@ -55,6 +55,12 @@ $(document).ready(function(){
 			five = true;
 		}
 	});
+	$('#btn6').on('click', function(e){
+		window.location.replace('css/harjoitus3.css');
+	});
+	$('#btn7').on('click', function(e){
+		window.location.replace('js/harjoitus3.js');
+	});
 	$('#btn_p').on('click',function (e) {
 		if (project == true){
 			$('#aside_p').slideUp("slow");
