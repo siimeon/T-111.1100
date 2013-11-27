@@ -56,13 +56,16 @@ $(document).ready(function(){
 		}
 	});
 	$('#btn6').on('click', function(e){
-		window.location.replace('css/harjoitus3.css');
+		window.open('css/harjoitus3.css');
 	});
 	$('#btn7').on('click', function(e){
-		window.location.replace('js/harjoitus3.js');
+		window.open('js/harjoitus3.js');
 	});
 	$('#btn8').on('click', function(e){
-		window.location.replace('js/harjoitus4.js');
+		window.open('js/harjoitus4.js');
+	});
+	$('#btn9').on('click', function(e){
+		window.open('http://partiokuvia.kuvat.fi');
 	});
 	$('#btn_p').on('click',function (e) {
 		if (project == true){

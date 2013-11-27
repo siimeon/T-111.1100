@@ -28,6 +28,15 @@
 		<script type="text/javascript" src="js/harjoitus3.js"></script>
 		<script type="text/javascript" src="js/harjoitus4.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/harjoitus3.css">
+		<link href="css/video-js.css" rel="stylesheet" type="text/css">
+  		<!-- video.js must be in the <head> for older IEs to work. -->
+  		<script src="js/video.js"></script>
+
+  		<!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  		<script>
+    		_V_.options.flash.swf = "js/video-js.swf";
+  		</script>
+		<script type="text/javascript" src="js/popcorn.js"></script>
 	</head>
 	<body>
 		<!-- Navigation bar is made inside header and it uses nav, ul and li elements -->
@@ -161,7 +170,7 @@
 		<section id="h4" data-bg-color="Hiilloksenoranssi">
 			<h1>Harjoitus 4.</h1>
 			<article class="content">
-				Harjoituksessa 4 käsiteltiin HTML5 canvas:sta ja 2d-animointia. Tässä on tehtäväni jossa pieni pujevene liikuu nuolinäppäimistä sekä a, s, d ja w näppäimistä. Pienet mootoriveneet liikuvat itsekseen ja niitä voi poistaa klikkaamalla niitä hiirellä. Tehtävä on tehty ja testattu OSX Mountailion + Chrome yhdistelmällä. Myös OSX + Safari on testattu toimivaki yhdistelmäksi.
+				Harjoituksessa 4 käsiteltiin HTML5 canvas:sta ja 2d-animointia. Tässä on tehtäväni jossa pieni pujevene liikuu nuolinäppäimistä sekä a, s, d ja w näppäimistä. Pienet mootoriveneet liikuvat itsekseen ja niitä voi poistaa klikkaamalla niitä hiirellä. Peli /animaatio käynnistyy s näpäintä painamalla ja pelin saa tauolle painamalla p:tä. Tehtävä on tehty ja testattu OSX Mountailion + Chrome yhdistelmällä. Myös OSX + Safari on testattu toimivaki yhdistelmäksi.
 			</article>
 			<center>
 				<canvas id="canvas4" width="1200" height="600" style="border:1px solid #000000;" data-bg-color="Partionsininen">
@@ -177,10 +186,112 @@
 		<section id="h5" data-bg-color="Puolukanpunainen">
 			<h1>Harjoitus 5.</h1>
 			<article class="content">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
+				Harjoituksessa 5. käsiteltiin HTML5 audio ja video elementtejä. Alla pieni video pätkä joka demostroi kuinka HTML5:n media elementtejä voidaan hyödyntää video ja äänitehosteiden ja tekstityksen näyttämiseen. Video ja äänitehosteet on testattu Mac OSX Mountain Lion + Safari ja Chrome yhdistelmällä.
 			</article>
+			<center>
+				<video id="thevideo" class="video-js vjs-default-skin" controls preload="none" width="864" height="540" poster="media/p_cover.jpg" data-setup="{}">
+					<source type="video/mp4" src="media/p_video.mp4" />
+					<source type="video/webm" src="media/p_video.webm" />
+					<source type="video/ogg" src="media/p_video.ogg" />
+					<track kind="captions" src="captions.vtt" srclang="en" label="English" />
+					<track src="subtiles.vtt" srclang="fi" label="Finnish"/>
+				</video>
+				<audio id="shut1">
+					<source type="audio/mpeg" src="media/shut1.mp3"/>
+					<source type="audio/ogg" src="media/shut1.ogg"/>
+					<source type="audio/wav" src="media/shut1.wav"/>
+				</audio>
+				<audio id="shut2">
+					<source type="audio/mpeg" src="media/shut2.mp3"/>
+					<source type="audio/ogg" src="media/shut2.ogg"/>
+					<source type="audio/wav" src="media/shut2.wav"/>
+				</audio>
+				<audio id="shut2">
+					<source type="audio/mpeg" src="media/shut3.mp3"/>
+					<source type="audio/ogg" src="media/shut3.ogg"/>
+					<source type="audio/wav" src="media/shut3.wav"/>
+				</audio>
+			</center>
+			<script type="text/javascript">
+					var shut1 = $('audio')[0];
+					var shut2 = $('audio')[1];
+					var shut3 = $('audio')[2];
+					function shot1(){
+						shut1.play();
+					}
+					function shot2(){
+						shut2.play();
+					}
+					function shot3(){
+						shut3.play();
+					}
+					var myPlayer = _V_("thevideo");
+					var myFunc = function(){
+      					var myPlayer = this;
+      					var time = myPlayer.currentTime();
+      					//console.log(time);
+      					if (time > 2 & time < 2.5){
+      						shot1();
+      					}
+      					else if (time > 7 & time < 7.5){
+      						shot2();
+      					}
+      					else if (time > 12 & time < 12.5){
+      						shot3();
+      					}
+      					else if (time > 17 & time < 17.5){
+      						shot2();
+      					}
+      					else if (time > 22 & time < 22.5){
+      						shot3();
+      					}
+      					else if (time > 27 & time < 27.5){
+      						shot2();
+      					}
+      					else if (time > 32 & time < 32.5){
+      						shot3();
+      					}
+      					else if (time > 37 & time < 37.5){
+      						shot3();
+      					}
+      					else if (time > 42 & time < 42.5){
+      						shot2();
+      					}
+      					else if (time > 47 & time < 47.5){
+      						shot2();
+      					}
+      					else if (time > 52 & time < 52.5){
+      						shot3();
+      					}
+      					else if (time > 57 & time < 57.5){
+      						shot2();
+      					}
+      					else if (time > 62 & time < 62.5){
+      						shot3();
+      					}
+      					else if (time > 67 & time < 67.5){
+      						shot3();
+      					}
+      					else if (time > 72 & time < 72.5){
+      						shot2();
+      					}
+      					else if (time > 72 & time < 72.5){
+      						shot3();
+      					}
+      					else if (time > 77 & time < 77.5){
+      						shot2();
+      					}
+      					else if (time > 82 & time < 82.5){
+      						shot3();
+      					}
+    				};
+    				myPlayer.addEvent("timeupdate", myFunc);
+			</script>
 			<h4 class="button" id="btn5">Harjoituksessa käytettyjä resursseja</h4>
-			<aside class="resourse" id="aside_5">HSV website resourses</aside>
+			<aside class="resourse" id="aside_5">
+				<center><a href="http://www.videojs.com/"><img src="img/videojs.png" width="125" alt="Videojs logo"></a></center>
+				<h4 class="button" id="btn9">Partio Kuvapankki</h4>
+			</aside>
 		</section>
 		<div class="fall_salmela_cover cover" data-cover="last"></div>
 		<!-- Footer element begins -->
