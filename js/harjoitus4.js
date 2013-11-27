@@ -3,7 +3,8 @@ $(document).ready(function(){
 	var ctx = $('#canvas4')[0].getContext("2d");
 	var canX = 1200;
 	var canY = 600;
-
+	var loop = null;
+	var items = new Array();
 
 	function Player(speed, positionX, positionY){
 		this.speed = speed;
@@ -120,15 +121,16 @@ $(document).ready(function(){
 	  	}
 	}
 	
-	var items = new Array();
-	ctx = $('#canvas4')[0].getContext("2d");
-	items[0] = new Player(5, canX/2, canY/2);
-	items[1] = new Enemy(1, 100, 100);
-	items[2] = new Enemy(3, 500, 70);
-	items[3] = new Enemy(1, 150, 200);
-	items[4] = new Enemy(2, 300, 500);
+	function init(){
+		ctx = $('#canvas4')[0].getContext("2d");
+		items[0] = new Player(5, canX/2, canY/2);
+		items[1] = new Enemy(1, 100, 100);
+		items[2] = new Enemy(3, 500, 70);
+		items[3] = new Enemy(1, 150, 200);
+		items[4] = new Enemy(2, 300, 500);
+		loop = setInterval(draw, 10);
+	}
 
-	setInterval(draw, 10);
 	function draw(){
 		ctx.clearRect(0,0,canX,canY);
 		for (i=0; i<items.length; i++){
@@ -142,6 +144,7 @@ $(document).ready(function(){
 			
 		}
 	}
+
 	$("#canvas4").click(function (e) {
 	    var mouseX = e.pageX - $("#canvas4").offset().left;
 	    var mouseY = e.pageY - $("#canvas4").offset().top;
@@ -152,6 +155,26 @@ $(document).ready(function(){
 			if (hit == false){
 				items.splice(i, 1);
 				console.log('hit');
+			}
+		}
+	});
+	var pause = false;
+	var first = true;
+	$('body').keydown(function( event ) {
+		if ( event.which == 80) {
+			if (pause == true){
+				loop = setInterval(draw, 10);
+				pause = false;
+			}
+			else{
+				clearInterval(loop);
+				pause = true;
+			}
+		}
+		if ( event.which == 83) {
+			if (first == true){
+				init();
+				first = false;
 			}
 		}
 	});
