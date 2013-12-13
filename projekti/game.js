@@ -13,7 +13,6 @@ var right = false;
 var down = false;
 var enemyCount = 0;
 var enemyArray = new Array();
-var scoreCount = 0;
 var player;
 var rand;
 var gamegoing = false;
@@ -21,6 +20,9 @@ var pause_text;
 var pause_continue;
 var pause_mainmenu;
 var pause_restart;
+var enemySpeed;
+var playerSpeed;
+var count;
 
 function init() {
 	stage = new createjs.Stage("game");
@@ -28,14 +30,14 @@ function init() {
 	queue.installPlugin(createjs.Sound);
 	queue.addEventListener("fileload", handleFileLoad);
 	queue.addEventListener("complete", playMusic);
-	queue.loadManifest([{id: "bg", src: "projekti/img/forestbackground.png"}, {id: "tree", src: "projekti/img/tree.png"}, {id: "player1", src: "projekti/sprite/runningGrant.png"}, {id: "music", src: "projekti/sounds/JungleB.mp3"},{id: "hop", src: "projekti/sounds/hop.mp3"},{id: "crash", src: "projekti/sounds/crash.wav"}, {id: "rock", src: "projekti/img/smallrock.png"}, {id: "bird", src: "projekti/img/bird.png"}, {id: "start_btn", src: "projekti/img/btn/start_btn.png"}, {id: "instructions_btn", src: "projekti/img/btn/instructions_btn.png"}, {id: "credits_btn", src: "projekti/img/btn/credits_btn.png"}, {id: "restart_btn", src: "projekti/img/btn/restart_btn.png"}, {id: "mainmenu_btn", src: "projekti/img/btn/mainmenu_btn.png"}, {id: "back_btn", src: "projekti/img/btn/back_btn.png"}, {id: "logo", src: "projekti/img/logo.png"}, {id: "gameover", src: "projekti/img/gameover.png"}, {id: "paused", src: "projekti/img/paused.png"}, {id: "continue_btn", src: "projekti/img/btn/continue_btn.png"},]);
+	queue.loadManifest([{id: "bg", src: "projekti/img/forestbackground.png"}, {id: "tree", src: "projekti/img/tree.png"}, {id: "player1", src: "projekti/sprite/runningGrant.png"}, {id: "music", src: "projekti/sounds/JungleB.mp3"},{id: "hop", src: "projekti/sounds/hop.mp3"},{id: "crash", src: "projekti/sounds/crash.wav"}, {id: "rock", src: "projekti/img/smallrock.png"}, {id: "bird", src: "projekti/img/bird.png"}, {id: "start_btn", src: "projekti/img/btn/start_btn.png"}, {id: "instructions_btn", src: "projekti/img/btn/instructions_btn.png"}, {id: "credits_btn", src: "projekti/img/btn/credits_btn.png"}, {id: "restart_btn", src: "projekti/img/btn/restart_btn.png"}, {id: "mainmenu_btn", src: "projekti/img/btn/mainmenu_btn.png"}, {id: "back_btn", src: "projekti/img/btn/back_btn.png"}, {id: "logo", src: "projekti/img/logo.png"}, {id: "gameover", src: "projekti/img/gameover.png"}, {id: "paused", src: "projekti/img/paused.png"}, {id: "continue_btn", src: "projekti/img/btn/continue_btn.png"}]);
 
 };
 
 function handleFileLoad() {
-	var loading = new createjs.Text("Loading...", "40px Arial", "#FF0000");
-	loading.x = 250;
-	loading.y = 160;
+	var loading = new createjs.Text("Loading...", "50px Verdana", "#FFFFFF");
+	loading.x = 200;
+	loading.y = 140;
 	stage.addChild(loading);
 	stage.update();
 };
@@ -80,13 +82,19 @@ function instructionPage() {
 
 	var bitmap = new createjs.Bitmap(queue.getResult("bg"));
 	var title = new createjs.Text("Instructions", "40px Arial", "#00FF00");
-	var text = new createjs.Text("Collect points", "20px Arial", "#FF0000");
+	var text = new createjs.Text("Use WASD keys to guide a lost scout boy through the forest. In the", "20px Arial", "#FF0000");
+	var text2 = new createjs.Text("forest the scout boy must avoid runnning into rocks and trees. There", "20px Arial", "#FF0000");
+	var text3 = new createjs.Text("are also very anggressive birds living in the forest which are better left", "20px Arial", "#FF0000");
+	var text4 = new createjs.Text("alone.", "20px Arial", "#FF0000");
 	var back = new createjs.Bitmap(queue.getResult("back_btn"));
 
 	text.y = 100;
+	text2.y = 120;
+	text3.y = 140;
+	text4.y = 160;
 	back.y = 280;
 
-	stage.addChild(bitmap, title, text, back);
+	stage.addChild(bitmap, title, text, text2, text3, text4, back);
 	stage.update();
 
 	back.addEventListener("click", mainMenu);
@@ -97,8 +105,8 @@ function creditPage() {
 
 	var bitmap = new createjs.Bitmap(queue.getResult("bg"));
 	var title = new createjs.Text("Credits", "40px Arial", "#00FF00");
-	var text = new createjs.Text("This game is an Aalto university course project made by Simo Haakana", "20px Arial", "#FF0000");
-	var text2 = new createjs.Text("and Patrick Patoila.", "20px Arial", "#FF0000");
+	var text = new createjs.Text("This game is an Aalto university course project made by Patrick Patoila", "20px Arial", "#FF0000");
+	var text2 = new createjs.Text("and Simo Haakana. Course: T-111.1100 Digitaalisen median työvälineet.", "20px Arial", "#FF0000");
 	var back = new createjs.Bitmap(queue.getResult("back_btn"));
 
 	text.y = 100;
@@ -113,6 +121,10 @@ function creditPage() {
 
 
 function game() {
+		
+		count = 0;
+		enemySpeed = 2;
+		playerSpeed = 2;
 	
 		stage.removeAllChildren();
 
@@ -121,7 +133,7 @@ function game() {
 		var data = {
 			images: ["projekti/sprite/runningGrant.png"],
 			frames: {width: 165, height: 292, count: 64},
-			animations: {run:[0, 25, "run"], jump: [26, 63, "run"]}
+			animations: {run:[0, 25, "run"], jump1: [36, 40, "jump2"], jump2: [40, 40, "jump2"], jump3: [48, 63, "run"]}
 		};
 		var spriteSheet = new createjs.SpriteSheet(data);
 	 	player = new createjs.BitmapAnimation(spriteSheet);
@@ -156,14 +168,6 @@ function startGame() {
 
 function tick(event) {
 	if (!createjs.Ticker.getPaused()){
-		enemy();
-		movePlayer();
-		scoreCount += 1;
-		if (scoreCount == 15) {
-			score.text = parseInt(score.text + 1);
-			scoreCount = 0;
-		} 
-		stage.update();
 		if (enemyArray.length >= 1) {
 			for (var i = 0; i < enemyArray.length; i++) {
 				var enemy1 = enemyArray[i];
@@ -175,6 +179,15 @@ function tick(event) {
 				}
 			}
 		}
+		if (count % 210 == 0 && playerSpeed <= 13) playerSpeed += 1;
+		if (count % 90 == 0 && enemySpeed <= 15) enemySpeed += 1;
+		enemy();
+		movePlayer();
+		if (count % 2 == 0) {
+			score.text = parseInt(score.text + 1);
+		} 
+		stage.update();
+		count += 1;
 	}
 };
 
@@ -188,6 +201,8 @@ function endGame() {
 	var mainMenu2 = new createjs.Bitmap(queue.getResult("mainmenu_btn"));
 
 	endnotice.x = 280;
+	endnotice.scaleX = 1.5;
+	endnotice.scaleY = 1.5;
 	endText.y = 40;
 	endText.x = 50;
 	endText2.y = 60;
@@ -206,10 +221,10 @@ function endGame() {
 };
 
 function enemy() {
-	if (enemyCount < 1) {
+	if (enemyCount < 0) {
 		rand = Math.random()*1000;
-		if (rand < 10) {
-			if (rand < 3.3){
+		if (rand < 30) {
+			if (rand < 10){
 				var bitmap = new createjs.Bitmap(queue.getResult("tree"));
 				bitmap.x = 640;
 				bitmap.y = 195;
@@ -217,9 +232,9 @@ function enemy() {
 				bitmap.scaleY = 1.5;
 				enemyArray.push(bitmap);
 				stage.addChild(bitmap);
-				enemyCount = 100;
+				enemyCount = 500;
 			}
-			else if (rand < 6.6){
+			else if (rand < 20){
 				var bitmap = new createjs.Bitmap(queue.getResult("rock"));
 				bitmap.x = 640;
 				bitmap.y = 275;
@@ -227,7 +242,7 @@ function enemy() {
 				bitmap.scaleY = 1.5;
 				enemyArray.push(bitmap);
 				stage.addChild(bitmap);
-				enemyCount = 100;
+				enemyCount = 350;
 			}
 			else {
 				var bitmap = new createjs.Bitmap(queue.getResult("bird"));
@@ -237,49 +252,54 @@ function enemy() {
 				bitmap.scaleY = 0.1;
 				enemyArray.push(bitmap);
 				stage.addChild(bitmap);
-				enemyCount = 100;
+				enemyCount = 450;
 			}
 		}
 	}
+	if (enemyArray.length > 0) {
+		if(enemyArray[0].x + 188 < 0) enemyArray.shift();
+	}
+	
 	for (var i = 0; i < enemyArray.length; i++) {
-		enemyArray[i].x -= 5;
-		if (enemyArray[i].y < 171) {
-			if (Math.random() < 0.5 && enemyArray[i].y >= 5) enemyArray[i].y -= 10;
-			else if (Math.random() >= 0.5 && enemyArray[i].y <= 166) enemyArray[i].y += 10;
+		enemyArray[i].x -= enemySpeed;
+		if (enemyArray[i].y <= 170) {
+			if (Math.random() < 0.4 && enemyArray[i].y >= 10) enemyArray[i].y -= 10;
+			else if (Math.random() >= 0.4 && enemyArray[i].y <= 160) enemyArray[i].y += 10;
 		}
 	}
-	enemyCount -= 1;
+	enemyCount -= 2 * enemySpeed;
 };
 
 
 function movePlayer() { //moves player
-	if (player.y < 209 ) player.y += 5;
+	if (player.y <= 214 - playerSpeed) player.y += playerSpeed;
 	else {
+		if (up3 == true) player.gotoAndPlay("jump3");
 		player.y = 214;
 		up3 = false;
 		up4 = false;
 	}
 	
 	if (left) {
-		if (player.x >= 5) player.x -= 5;
+		if (player.x >= playerSpeed) player.x -= playerSpeed;
 		else player.x = 0;
 	};
 	if (up1 == true && up3 == false) {
-		player.y -= 180;
+		player.y -= 200;
 		up1 = false;
 		up3 = true;
 	}
 	if (up2 == true && up4 == false) {
-		player.y -= 180;
+		player.y -= 130;
 		up2 = false;
 		up4 = true;
 	}
 	if (right) {
-		if (player.x <= 555) player.x += 5;
+		if (player.x <= 560 - playerSpeed) player.x += playerSpeed;
 		else player.x = 560;
 	};
 	if (down) {
-		if (player.y <= 209) player.y += 5;
+		if (player.y <= 214 - playerSpeed) player.y += playerSpeed;
 		else player.y = 214;
 	};
 };
@@ -289,14 +309,14 @@ function onKeyDown(x) { //listens for wasd-keypress
 		if (up1 == false && up3 == false && up5 == false) {
 			up1 = true;
 			up5 = true;
-			player.stop();
-			player.gotoAndPlay("jump");
 			createjs.Sound.play("hop");
+			player.gotoAndPlay("jump1");
 		}
 		else if (up2 == false && up4 == false && up5 == false) {
 			up2 = true;
 			up5 = true;
 			createjs.Sound.play("hop");
+			player.gotoAndPlay("jump1");
 		}
 	}
   	if (x.keyCode == 65) left = true;
