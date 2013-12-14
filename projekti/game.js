@@ -1,3 +1,6 @@
+/* Copyright 2013 by Patric Patoila and Simo Haakana */
+/* All Rights Reserved */
+
 var stage;
 var queue;
 var score;
@@ -82,17 +85,23 @@ function instructionPage() {
 
 	var bitmap = new createjs.Bitmap(queue.getResult("bg"));
 	var title = new createjs.Text("Instructions", "40px Arial", "#00FF00");
-	var text = new createjs.Text("Use WASD keys to guide a lost scout boy through the forest. In the", "20px Arial", "#FF0000");
-	var text2 = new createjs.Text("forest the scout boy must avoid runnning into rocks and trees. There", "20px Arial", "#FF0000");
-	var text3 = new createjs.Text("are also very anggressive birds living in the forest which are better left", "20px Arial", "#FF0000");
-	var text4 = new createjs.Text("alone.", "20px Arial", "#FF0000");
+	var text = new createjs.Text("Use WASD keys to guide a lost boy scout through the forest. In the", "20px Arial", "#FFCCFF");
+	var text2 = new createjs.Text("forest the boy scout must avoid runnning into rocks and trees. There", "20px Arial", "#FFCCFF");
+	var text3 = new createjs.Text("are also very anggressive birds living in the forest which are better left", "20px Arial", "#FFCCFF");
+	var text4 = new createjs.Text("alone.", "20px Arial", "#FFCCFF");
 	var back = new createjs.Bitmap(queue.getResult("back_btn"));
 
+	title.x = 220;
 	text.y = 100;
+	text.x = 5;
 	text2.y = 120;
+	text2.x = 5;
 	text3.y = 140;
+	text3.x = 5;
 	text4.y = 160;
+	text4.x = 5;
 	back.y = 280;
+	back.x = 10;
 
 	stage.addChild(bitmap, title, text, text2, text3, text4, back);
 	stage.update();
@@ -105,15 +114,22 @@ function creditPage() {
 
 	var bitmap = new createjs.Bitmap(queue.getResult("bg"));
 	var title = new createjs.Text("Credits", "40px Arial", "#00FF00");
-	var text = new createjs.Text("This game is an Aalto university course project made by Patrick Patoila", "20px Arial", "#FF0000");
-	var text2 = new createjs.Text("and Simo Haakana. Course: T-111.1100 Digitaalisen median työvälineet.", "20px Arial", "#FF0000");
+	var text = new createjs.Text("This game is an Aalto university course project made by Patrick Patoila", "20px Arial", "#FFCCFF");
+	var text2 = new createjs.Text("and Simo Haakana.", "20px Arial", "#FFCCFF");
+	var text3 = new createjs.Text("Course: T-111.1100 Digitaalisen median työvälineet.", "20px Arial", "#FFCCFF");
 	var back = new createjs.Bitmap(queue.getResult("back_btn"));
 
+	title.x = 230;
 	text.y = 100;
+	text.x = 5;
 	text2.y = 120;
+	text2.x = 5;
+	text3.y = 140;
+	text3.x = 5;
 	back.y = 280;
+	back.x = 10;
 
-	stage.addChild(bitmap, title, text, text2, back);
+	stage.addChild(bitmap, title, text, text2, text3, back);
 	stage.update();
 
 	back.addEventListener("click", mainMenu);
